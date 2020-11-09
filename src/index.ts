@@ -1,5 +1,6 @@
-import {Request, Response} from 'express';
-import app from './app';
+import express from 'express';
+const expressApp = express();
+import {App} from './app';
 import * as dotenv from 'dotenv';
 import { logger } from './utils/logger';
 import * as Controllers from './controllers/index';
@@ -7,14 +8,11 @@ import * as Controllers from './controllers/index';
 dotenv.config();
 
 const port = process.env.APP_PORT || 4200;
-
+// register App
+App.init(expressApp);
 // register all routes
-Controllers.register(app);
+Controllers.register(expressApp);
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('The sedulous hyena ate the antelope!');
-});
-
-app.listen(port, () => {
+expressApp.listen(port, () => {
     logger.info('Server burning hot at ' + port)
 })

@@ -1,0 +1,6 @@
+POST http://localhost:4200/crawl
+content-type: application/json
+
+{
+    "url": "https://www.facebook.com"
+}
