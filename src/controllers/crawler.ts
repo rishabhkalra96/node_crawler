@@ -15,6 +15,8 @@ router.post('/', async (req: Request, res:Response) => {
         } catch(e) {
             res.status(200).send({});
         }
+    } else {
+        res.status(400).send({ok: false, status: 400, error: `A non empty url key is mandatory in post body request`})
     }
 });
 
