@@ -8,6 +8,11 @@ The project is built on nodejs using typescript compiler. It uses redis for cach
 * **Clone the project**
 * **Type npm i**
 * **Set environment variables for your use**
+  * Although the application is completely functional even if you don't set any variables, still the environment variables which can be used are :
+      1. APP_PORT
+      2. ENABLE_CACHING (y/n)
+      3. REDIS_PORT
+      4. REDIS_HOST
 * **npm run start**
 
 # **Sample usage**
